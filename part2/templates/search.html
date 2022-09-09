@@ -10,7 +10,7 @@
     <h1>Найдено кандидатов</h1>
     {% for candidate in candidates %}
         <p>
-            <a href="/candidates/{{ candidate['id'] }}">{{ candidate['name'] }}</a>
+            <a href="/candidates/{{ candidate.id }}">{{ candidate.name }}</a>
         </p>
     {% endfor %}
 {% else %}
@@ -18,4 +18,5 @@
 {% endif %}
 </body>
 </html>
+
 
