@@ -24,6 +24,7 @@ def get_candidates_by_name(candidate_name: str) -> Dict|str:
     return "Нет такого кандидата"
 
 
+
 def get_candidate_by_skill(skill: str) -> List:
     candidate_by_skill_list = []
     for candidate in load_candidates_from_json(PATH):
