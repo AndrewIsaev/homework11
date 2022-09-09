@@ -17,10 +17,12 @@ def get_candidate(candidate_id: int) -> Dict|str:
     return "Нет такого кандидата"
 
 
-def get_candidates_by_name(candidate_name: str) -> Dict|str:
+def get_candidates_by_name(candidate_name: str) -> List|str:
+    candidates_by_name = []
     for candidate in load_candidates_from_json(PATH):
-        if candidate["name"] == candidate_name:
-            return candidate
+        if candidate["name"].lower().split()[0] == candidate_name.lower():
+            candidates_by_name.append(candidate)
+            return candidates_by_name
     return "Нет такого кандидата"
 
 
@@ -40,3 +42,6 @@ def formatted_output(candidates_list: list) -> str:
         res += candidate["position"] + "<br>"
         res += candidate["skills"] + "<br><br>"
     return res
+
+
+print(get_candidates_by_name("Austin"))

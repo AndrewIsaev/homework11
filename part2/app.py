@@ -17,5 +17,10 @@ def candidates_by_pk(uid):
     return render_template("single.html", candidate=candidate)
 
 
+@app.route("/search/<candidate_name>")
+def search(candidate_name):
+    candidates = utils.get_candidates_by_name(candidate_name)
+    return render_template("search.html", candidates=candidates)
+
 if __name__ == '__main__':
     app.run(port=5001, debug=True)
