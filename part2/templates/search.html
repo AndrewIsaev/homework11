@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Candidates by name</title>
 </head>
 <body>
-    <h1>Найдено кандидатов</h1>
-    {% if candidates %}
-        {% for candidate in candidates %}
-        <p><a href="/candidates/{{ candidate['id'] }}">{{ candidate['name'] }}</a> </p>
-        {% endfor %}
-    {% else %}
-        <p>Нет такого кандидата</p>
-    {% endif %}
+<h1>Найдено кандидатов</h1>
+{% if candidates %}
+    {% for candidate in candidates %}
+        <p>
+            <a href="/candidates/{{ candidate['id'] }}">{{ candidate['name'] }}</a>
+        </p>
+    {% endfor %}
+{% else %}
+    <p> Кандитатов не найдено</p>
+{% endif %}
 </body>
 </html>
 
