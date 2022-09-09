@@ -14,7 +14,7 @@ def get_candidate(candidate_id: int) -> Dict|str:
     for candidate in load_candidates_from_json(PATH):
         if candidate["id"] == candidate_id:
             return candidate
-    return "Нет такого кандидата"
+
 
 
 def get_candidates_by_name(candidate_name: str) -> List|str:
@@ -23,7 +23,7 @@ def get_candidates_by_name(candidate_name: str) -> List|str:
         if candidate["name"].lower().split()[0] == candidate_name.lower():
             candidates_by_name.append(candidate)
             return candidates_by_name
-    return "Нет такого кандидата"
+
 
 
 
@@ -43,5 +43,3 @@ def formatted_output(candidates_list: list) -> str:
         res += candidate["skills"] + "<br><br>"
     return res
 
-
-print(get_candidates_by_name("Austin"))
