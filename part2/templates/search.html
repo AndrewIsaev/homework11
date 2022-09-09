@@ -5,15 +5,16 @@
     <title>Candidates by name</title>
 </head>
 <body>
-<h1>Найдено кандидатов</h1>
+
 {% if candidates %}
+    <h1>Найдено кандидатов</h1>
     {% for candidate in candidates %}
         <p>
             <a href="/candidates/{{ candidate['id'] }}">{{ candidate['name'] }}</a>
         </p>
     {% endfor %}
 {% else %}
-    <p> Кандитатов не найдено</p>
+    <h1> Кандитатов не найдено</h1>
 {% endif %}
 </body>
 </html>
