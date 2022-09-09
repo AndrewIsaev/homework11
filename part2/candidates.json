@@ -61,5 +61,14 @@
     "gender": "female",
     "age": 33,
     "skills": "Python, Django, flask"
+  },
+  {
+    "id": 8,
+    "name": "Sheree Love",
+    "picture": "https://picsum.photos/200",
+    "position": "Django developer",
+    "gender": "female",
+    "age": 33,
+    "skills": "Python, Django, flask"
   }
 ]
