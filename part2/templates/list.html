@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>App</title>
+    <title>All candidates</title>
 </head>
 <body>
-    <h1>Все кандидаты</h1>
-        {% for candidate in candidates %}
-            <p><a href="/candidates/{{candidate['id']}}">{{candidate["name"]}}</a><br></p>
-        {% endfor %}
+<h1>Все кандидаты</h1>
+{% for candidate in candidates %}
+    <p>
+        <a href="/candidates/{{ candidate['id'] }}">{{ candidate["name"] }}</a><br>
+    </p>
+{% endfor %}
 </body>
 </html>
