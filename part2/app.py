@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-from part2 import utils
+
+import utils
 
 app = Flask(__name__)
 
@@ -13,9 +14,9 @@ def all_candidates():
 @app.route("/candidates/<int:uid>")
 def candidates_by_pk(uid):
     candidate = utils.get_candidate(uid)
-    is_exist = candidate != None
-    return render_template("single.html", candidate=candidate,
-                           is_exist=is_exist)
+    if candidate == None:
+        return render_template("404.html")
+    return render_template("single.html", candidate=candidate)
 
 
 @app.route("/search/<candidate_name>")
